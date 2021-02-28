@@ -11,7 +11,7 @@ groovy-chat 713902713833914429
 let state = null;
 function isLive() {
   const date = new Date();
-  console.log(date.toISOString())
+  console.log(date.getDay(), date.getHours())
   return true
   return date.getHours() >= 2 && date.getHours() < 4 && date.getDay() === 0;
 }
@@ -28,7 +28,6 @@ async function nowPlaying() {
   const url = `${ENDPOINT}${file}`;
   const resp = await axios.get(url, { responseType: "arraybuffer" });
   const trackInfo = NodeId3.read(resp.data);
-  console.log(trackInfo)
   const outputString = `:musical_note: ${trackInfo.artist} - ${trackInfo.title}`;
   return outputString;
 }
