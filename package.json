@@ -1,0 +1,14 @@
+{
+  "name": "discord-bot.soulection.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1",
+    "node-id3": "^0.2.2"
+  },
+  "scripts": {
+    "start": "node ./now-playing-live.js"
+  }
+}
