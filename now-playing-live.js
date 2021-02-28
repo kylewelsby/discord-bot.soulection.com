@@ -11,8 +11,6 @@ groovy-chat 713902713833914429
 let state = null;
 function isLive() {
   const date = new Date();
-  console.log(date.getDay(), date.getHours())
-  return true
   return date.getHours() >= 2 && date.getHours() < 4 && date.getDay() === 0;
 }
 
@@ -22,7 +20,6 @@ async function nowPlaying() {
   const ENDPOINT =
     "https://itsliveradio.apple.com/streams/978194965/hub07/session04/256k/";
   const { data } = await axios.get(`${ENDPOINT}prog.m3u8`);
-  console.log(data)
   const matches = data.match(/^prog-\d+T\d+Z\.mp4$/gm);
   const file = matches[0];
   const url = `${ENDPOINT}${file}`;
@@ -59,7 +56,7 @@ function check(channel) {
     .then((msg) => {
       console.log(msg);
       // channel.send("Hello World,  @halfcube#7940 here testing the Now Playing bot for Soulection Radio.")
-      // channel.send(msg);
+      channel.send(msg);
     })
     .catch((err) => {
       // noop
