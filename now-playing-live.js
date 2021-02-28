@@ -10,8 +10,9 @@ groovy-chat 713902713833914429
 
 let state = null;
 function isLive() {
-  return true
   const date = new Date();
+  console.log(date.toISOString())
+  return true
   return date.getHours() >= 2 && date.getHours() < 4 && date.getDay() === 0;
 }
 
