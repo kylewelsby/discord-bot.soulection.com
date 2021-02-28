@@ -8,6 +8,8 @@ sound-check 797604513472184342
 groovy-chat 713902713833914429
 */
 
+const CHANNEL_ID = process.env.CHANNEL_ID || '797604513472184342'
+
 let state = null;
 function isLive() {
   const date = new Date();
@@ -68,8 +70,8 @@ function check(channel) {
     });
 }
 client.on("ready", () => {
-  const channel = client.channels.cache.get("713902713833914429");
-  // channel.send("Live Tracklisting Enabled")
+  const channel = client.channels.cache.get(CHANNEL_ID);
+  channel.send("📣 Yerrr")
   check(channel);
 });
 
